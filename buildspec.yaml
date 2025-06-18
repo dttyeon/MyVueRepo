@@ -19,4 +19,10 @@ phases:
   post_build:
     commands:
       - echo post Building
-      - aws s3 sync ./dist s3://vue-website-45942
+      - aws s3 sync ./dist s3://vue-website-45942 --delete
+artifacts:
+  files:
+    - dist/**/*
+    - appspec.yml
+    - scripts/**/*
+  discard-paths: no
