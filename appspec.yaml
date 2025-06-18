@@ -4,16 +4,16 @@ files:
   - source: dist
     destination: /var/www/html
 hooks:
-  BeforeInstall:
+  ApplicationStop:
     - location: scripts/install_dependencies
       timeout: 300
       runas: root
+  BeforeInstall:
     - location: scripts/start_server
       timeout: 300
       runas: root
-  ApplicationStop:
     - location: scripts/stop_server
-    timeout: 300
-    runas: root
+      timeout: 300
+      runas: root
   ValidateService:
     - location: scripts/basic_health_check.sh
