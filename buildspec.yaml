@@ -23,6 +23,6 @@ phases:
 artifacts:
   files:
     - dist/**/*
-    - appspec.yml
+    - appspec.yaml
     - scripts/**/*
   discard-paths: no
